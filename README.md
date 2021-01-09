@@ -4,9 +4,8 @@ output: github_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 ```
-
 ## Primeros pasos de R 
 
 This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
@@ -15,8 +14,14 @@ This is an R Markdown format used for publishing markdown documents to GitHub. W
 
 You can include R code in the document as follows:
 
-```{r cars}
-summary(cars)
+
+
+```{r}
+library(tidyverse)
+data("mtcars")
+ggplot(aes(x=wt, y=mpg))+geom_smooth(method = "lm")+
+geom_point()+theme_bw()
+
 ```
 
 ## Including Plots
